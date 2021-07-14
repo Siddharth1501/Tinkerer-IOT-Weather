@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+var xValues = ["August","September","October","November"];
+var yValues = [15,16,17,18];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 5,
+      backgroundColor: "rgba(0,0,100,1.0)",
+      
+      data: yValues
+    }],
+    var: layout = {title:"Days of snow"},
+    
+  },
+options: {
+    legend: {display: false,},
+    scales: {
+      yAxes: [{ticks: {min: 0, max:133}}],
+    }
+  },
+  options: {
+            scales: {
+              xAxes: [{ 
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Month'
+                }
+              }],
+              yAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Days of Snow'
+                }
+              }],
+            }
+          },
+});
+</script>
+
+</body>
+</html>
